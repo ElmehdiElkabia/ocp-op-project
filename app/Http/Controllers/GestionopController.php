@@ -37,7 +37,7 @@ class GestionopController extends Controller
             ->orWhere('montant', 'like', '%' . $query . '%')
             ->get();
 
-        return view('content.tables.table-search',compact('ops'));
+        return view('content.tables.table-search', compact('ops'));
     }
 
     /**

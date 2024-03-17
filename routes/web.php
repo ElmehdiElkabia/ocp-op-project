@@ -26,10 +26,6 @@ use App\Http\Controllers\user_interface\TabsPills;
 use App\Http\Controllers\user_interface\Toasts;
 use App\Http\Controllers\user_interface\TooltipsPopovers;
 use App\Http\Controllers\user_interface\Typography;
-use App\Http\Controllers\form_elements\BasicInput;
-use App\Http\Controllers\form_elements\InputGroups;
-use App\Http\Controllers\form_layouts\HorizontalForm;
-use App\Http\Controllers\tables\Basic as TablesBasic;
 use App\Http\Controllers\GestionopController;
 
 // Main Page Route
@@ -37,10 +33,6 @@ Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
 
 //->middleware('auth');
 
-
-// pages
-Route::get('/pages/misc-error', [MiscError::class, 'index'])->name('pages-misc-error');
-Route::get('/pages/misc-under-maintenance', [MiscUnderMaintenance::class, 'index'])->name('pages-misc-under-maintenance');
 
 // authentication
 Route::get('/auth/login', [Login::class, 'index'])->name('login');
@@ -70,12 +62,6 @@ Route::get('/ui/typography', [Typography::class, 'index'])->name('ui-typography'
 
 
 
-// form elements
-Route::get('/forms/basic-inputs', [BasicInput::class, 'index'])->name('forms-basic-inputs');
-Route::get('/forms/input-groups', [InputGroups::class, 'index'])->name('forms-input-groups');
-
-// form layouts
-Route::get('/créer/nouvelle', [HorizontalForm::class, 'index'])->name('form-layouts-horizontal');
 
 // table
 Route::get('/table/all', [GestionopController::class, 'index'])->name('table-all');
@@ -86,7 +72,7 @@ Route::get('/table/non_paiement', [GestionopController::class, 'filter_non_paiem
 Route::get('edit/{id}', [GestionopController::class, 'edit'])->name('edit-op');
 Route::put('update/{id}', [GestionopController::class, 'update'])->name('update-op');
 Route::post('add', [GestionopController::class, 'store'])->name('add-op');
-Route::get('créer', [GestionopController::class, 'create']);
+Route::get('/créer/nouvelle', [GestionopController::class, 'create']);
 Route::delete('op/{id}', [GestionopController::class, 'destroy'])->name('destroy-op');
 
 // search

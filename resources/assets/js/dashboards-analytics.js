@@ -13,6 +13,7 @@
   borderColor = config.colors.borderColor;
 
 
+  
   // Order Statistics Chart
   // --------------------------------------------------------------------
   // const chartOrderStatistics = document.querySelector('#orderStatisticsChart'),

@@ -2,11 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboard\Analytics;
-use App\Http\Controllers\pages\AccountSettingsAccount;
 use App\Http\Controllers\pages\MiscError;
 use App\Http\Controllers\pages\MiscUnderMaintenance;
-use App\Http\Controllers\authentications\LoginBasic;
-use App\Http\Controllers\authentications\RegisterBasic;
+use App\Http\Controllers\authentications\Login;
+use App\Http\Controllers\authentications\Register;
 use App\Http\Controllers\authentications\ForgotPasswordBasic;
 use App\Http\Controllers\user_interface\Accordion;
 use App\Http\Controllers\user_interface\Alerts;
@@ -31,19 +30,21 @@ use App\Http\Controllers\form_elements\BasicInput;
 use App\Http\Controllers\form_elements\InputGroups;
 use App\Http\Controllers\form_layouts\HorizontalForm;
 use App\Http\Controllers\tables\Basic as TablesBasic;
+use App\Http\Controllers\GestionopController;
 
 // Main Page Route
 Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
 
+//->middleware('auth');
+
 
 // pages
-Route::get('/pages/account-settings-account', [AccountSettingsAccount::class, 'index'])->name('pages-account-settings-account');
 Route::get('/pages/misc-error', [MiscError::class, 'index'])->name('pages-misc-error');
 Route::get('/pages/misc-under-maintenance', [MiscUnderMaintenance::class, 'index'])->name('pages-misc-under-maintenance');
 
 // authentication
-Route::get('/auth/login-basic', [LoginBasic::class, 'index'])->name('auth-login-basic');
-Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
+Route::get('/auth/login', [Login::class, 'index'])->name('login');
+Route::get('/auth/register', [Register::class, 'index'])->name('register');
 Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
 
 // User Interface
@@ -74,8 +75,19 @@ Route::get('/forms/basic-inputs', [BasicInput::class, 'index'])->name('forms-bas
 Route::get('/forms/input-groups', [InputGroups::class, 'index'])->name('forms-input-groups');
 
 // form layouts
-Route::get('/form/layouts-horizontal', [HorizontalForm::class, 'index'])->name('form-layouts-horizontal');
+Route::get('/créer/nouvelle', [HorizontalForm::class, 'index'])->name('form-layouts-horizontal');
 
 // table
-Route::get('/table/all', [TablesBasic::class, 'index'])->name('table');
-Route::get('/table/payment', [TablesBasic::class, 'index'])->name('table');
+Route::get('/table/all', [GestionopController::class, 'index'])->name('table-all');
+Route::get('/table/paiement', [GestionopController::class, 'filter_paiement'])->name('table-paiement');
+Route::get('/table/non_paiement', [GestionopController::class, 'filter_non_paiement'])->name('table-non-paiement');
+
+// crud
+Route::get('edit/{id}', [GestionopController::class, 'edit'])->name('edit-op');
+Route::put('update/{id}', [GestionopController::class, 'update'])->name('update-op');
+Route::post('add', [GestionopController::class, 'store'])->name('add-op');
+Route::get('créer', [GestionopController::class, 'create']);
+Route::delete('op/{id}', [GestionopController::class, 'destroy'])->name('destroy-op');
+
+// search
+Route::get('/search', [GestionopController::class, 'search'])->name('search');

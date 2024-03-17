@@ -1,15 +1,15 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'Tableau - Tout- OP')
+@section('title', 'Tableau - Recherche- OP')
 
 @section('content')
     <h4 class="py-3 mb-4">
-        <span class="text-muted fw-light">Tableau /</span> Tout
+        <span class="text-muted fw-light">Recherche /</span> Tout
     </h4>
 
 
     <div class="card">
-        <h5 class="card-header">Tableau tout OP</h5>
+        <h5 class="card-header">Recherche tout OP</h5>
         <div class="table-responsive text-nowrap">
             <table class="table">
                 <thead>

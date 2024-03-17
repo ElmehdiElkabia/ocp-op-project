@@ -1,15 +1,15 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'Tableau - Tout- OP')
+@section('title', 'Tableau - Paiement- OP')
 
 @section('content')
     <h4 class="py-3 mb-4">
-        <span class="text-muted fw-light">Tableau /</span> Tout
+        <span class="text-muted fw-light">Tableau /</span> Paiement
     </h4>
 
 
     <div class="card">
-        <h5 class="card-header">Tableau tout OP</h5>
+        <h5 class="card-header">Tableau Paiement OP</h5>
         <div class="table-responsive text-nowrap">
             <table class="table">
                 <thead>
@@ -24,15 +24,12 @@
                 <tbody class="table-border-bottom-0">
                     @foreach ($ops as $op)
                         <tr>
-                            <td><span class="fw-medium">{{ $op->numero }}</span></td>
+                            <td> <span class="fw-medium">{{ $op->numero }}</span></td>
                             <td>{{ $op->libelle }}</td>
-                            <td><span class="fw-medium">{{ $op->montant }}DH</span></td>
                             <td>
-                                <span
-                                    class="badge {{ $op->regellement == 'oui' ? 'bg-label-success' : 'bg-label-danger' }} me-1">
-                                    {{ $op->regellement }}
-                                </span>
+                                <span class="fw-medium">{{ $op->montant }}DH</span>
                             </td>
+                            <td><span class="badge bg-label-success me-1">{{ $op->regellement }}</span></td>
                             <td class="d-flex justify-content-center align-items-center">
                                 <a class="dropdown-item" href="{{ route('edit-op', $op->id) }}"><i
                                         class="bx bx-edit-alt"></i></a>
@@ -46,12 +43,14 @@
                                     </button>
                                 </form>
                             </td>
-
-
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
+    </div>
+
+
+
     </div>
 @endsection

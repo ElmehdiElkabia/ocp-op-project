@@ -14,74 +14,62 @@
       ]
     },
     {
-      "name": "Account Settings",
-      "icon": "menu-icon tf-icons bx bx bx-dock-top",
-      "slug": "pages-account-settings",
-      "submenu": [
-        {
-          "url": "pages/account-settings-account",
-          "name": "Account",
-          "slug": "pages-account-settings-account"
-        }
-      ]
-    },
-    {
       "name": "Authentications",
       "icon": "menu-icon tf-icons bx bx-lock-open-alt",
       "slug": "auth",
       "submenu": [
         {
-          "url": "auth/login-basic",
+          "url": "auth/login",
           "name": "Login",
-          "slug": "auth-login-basic",
+          "slug": "auth-login",
           "target": "_blank"
         },
         {
-          "url": "auth/register-basic",
+          "url": "auth/register",
           "name": "Register",
-          "slug": "auth-register-basic",
+          "slug": "auth-register",
           "target": "_blank"
         },
         {
-          "url": "auth/forgot-password-basic",
+          "url": "auth/forgot-password",
           "name": "Forgot Password",
-          "slug": "auth-forgot-password-basic",
+          "slug": "auth-forgot-password",
           "target": "_blank"
         }
       ]
     },
     {
-      "url": "table/all",
+      "url": "/table/all",
       "icon": "menu-icon tf-icons bx bx-table",
-      "name": "table",
-      "slug": "table-all",
+      "name": "tableau",
+      "slug": "tableau-all",
       "submenu": [
         {
-          "url": "table/all",
-          "name": "all",
+          "url": "/table/all",
+          "name": "tout",
           "slug": "pages-misc-error"
         },
         {
-          "url": "table/payment",
-          "name": "payment",
+          "url": "table/paiement",
+          "name": "paiement",
           "slug": "pages-misc-error"
         },
         {
-          "url": "table/basic",
-          "name": "badr",
+          "url": "/table/non_paiement",
+          "name": "non paiement",
           "slug": "pages-misc-error"
         }
       ]
     },
     {
-      "name": "Form",
+      "name": "créer",
       "icon": "menu-icon tf-icons bx bx-list-plus",
-      "slug": "form-layouts",
+      "slug": "créer",
       "submenu": [
         {
-          "url": "form/layouts-horizontal",
-          "name": "Horizontal Form",
-          "slug": "form-layouts-horizontal"
+          "url": "créer/nouvelle",
+          "name": "créer",
+          "slug": "créer"
         }
       ]
     },

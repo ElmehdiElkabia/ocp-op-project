@@ -309,7 +309,7 @@
         <div class="mb-3 row">
           <label for="html5-text-input" class="col-md-2 col-form-label">Text</label>
           <div class="col-md-10">
-            <input class="form-control" type="text" value="{{ config('variables.templateName') }}" id="html5-text-input" />
+            <input class="form-control" type="text" value="{{ config('variables.Name') }}" id="html5-text-input" />
           </div>
         </div>
         <div class="mb-3 row">

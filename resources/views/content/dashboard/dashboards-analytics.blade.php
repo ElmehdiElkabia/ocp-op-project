@@ -24,8 +24,15 @@
                         <h5 class="card-title text-success">Bonjour! 🎉</h5>
                         <p class="mb-4">You have done <span class="fw-medium">72%</span> more sales today. Check your
                             new badge in your profile.</p>
-
-                        <a href="https://www.ocpgroup.ma/fr" class="btn btn-sm btn-outline-success">View Badges</a>
+                            
+                            <form action="{{url('/import')}}" method="post" enctype="multipart/form-data" class="input-group">
+                                @csrf
+                                <input type="file" class="form-control" id="file" aria-label="Upload">
+                                <button class="btn btn-md btn-success" class="-2" type="submit" value="import">import</button>
+                                <a class="btn btn-md btn-success" href="{{url('export')}}">export</a>
+                            </form>
+                        <!-- <a  class="btn btn-md btn-success" value="export">export</a>
+                        <input type="button"  class="btn btn-md btn-success" value="import"> -->
                     </div>
                 </div>
                 <div class="col-sm-5 text-center text-sm-left">

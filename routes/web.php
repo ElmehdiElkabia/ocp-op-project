@@ -5,6 +5,7 @@ use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\authentications\Login;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\GestionopController;
+use App\Http\Controllers\FillterDate;
 
 // Main Page Route
 Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
@@ -39,3 +40,4 @@ Route::post('/import', [ExcelController::class, 'import'])->name('import');
 Route::get('/export/{id}', [ExcelController::class, 'export'])->name('export');
 Route::post('/export/{id}', [ExcelController::class, 'export'])->name('export'); // It seems redundant to have both GET and POST for export
 Route::get('/exportall', [ExcelController::class, 'exportall'])->name('exportall');
+Route::get('/filter-ops', [FillterDate::class, 'filterOps'])->name('filter-ops');

@@ -105,8 +105,8 @@
             <div class="card h-100">
                 <div class="card-header d-flex align-items-center justify-content-between pb-0">
                     <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">Gestion</h5>
-                        <small class="text-muted">{{ $totalPrice }} Total Dh</small>
+                        <h5 class="m-0 me-2">Gestion de</h5>
+                        <small class="text-muted">{{ $totalPrice }}  Dh</small>
                     </div>
                 </div>
                 <div class="card-body">

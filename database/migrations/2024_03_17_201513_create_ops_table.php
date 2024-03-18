@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('libelle');
             $table->string('elaboration');
             $table->string('type');
-            $table->decimal('montant');
+            $table->string('montant');
             $table->string('regellement')->default('non');
             $table->timestamps();
         });

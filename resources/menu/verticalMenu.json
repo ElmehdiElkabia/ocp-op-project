@@ -13,19 +13,7 @@
         }
       ]
     },
-    {
-      "name": "Authentications",
-      "icon": "menu-icon tf-icons bx bx-lock-open-alt",
-      "slug": "auth",
-      "submenu": [
-        {
-          "url": "auth/login",
-          "name": "Login",
-          "slug": "auth-login",
-          "target": "_blank"
-        }
-      ]
-    },
+    
     {
       "url": "/table/all",
       "icon": "menu-icon tf-icons bx bx-table",

@@ -16,20 +16,27 @@
                     <tr>
                         <th>Numero Op</th>
                         <th>Libelle</th>
+                        <th>Elaboration</th>
+                        <th>Type</th>
                         <th>Montant</th>
-                        <th>Status</th>
+                        <th>Regellement</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                    @foreach ($ops as $op)
+                @foreach ($ops as $op)
                         <tr>
-                            <td> <span class="fw-medium">{{ $op->numero }}</span></td>
+                            <td><span class="fw-medium">{{ $op->numero }}</span></td>
                             <td>{{ $op->libelle }}</td>
+                            <td><span class="fw-medium">{{ $op->elaboration }}</span></td>
+                            <td><span class="fw-medium">{{ $op->type }}</span></td>
+                            <td><span class="fw-medium">{{ $op->montant }}DH</span></td>
                             <td>
-                                <span class="fw-medium">{{ $op->montant }}DH</span>
+                                <span
+                                    class="badge {{ $op->regellement == 'oui' ? 'bg-label-success' : 'bg-label-danger' }} me-1">
+                                    {{ $op->regellement }}
+                                </span>
                             </td>
-                            <td><span class="badge bg-label-success me-1">{{ $op->regellement }}</span></td>
                             <td class="d-flex justify-content-center align-items-center">
                                 <a class="dropdown-item" href="{{ route('edit-op', $op->id) }}"><i
                                         class="bx bx-edit-alt"></i></a>
@@ -43,6 +50,8 @@
                                     </button>
                                 </form>
                             </td>
+
+
                         </tr>
                     @endforeach
                 </tbody>

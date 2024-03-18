@@ -16,8 +16,10 @@
                     <tr>
                         <th>Numero Op</th>
                         <th>Libelle</th>
+                        <th>Elaboration</th>
+                        <th>Type</th>
                         <th>Montant</th>
-                        <th>Status</th>
+                        <th>Regellement</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -26,6 +28,8 @@
                         <tr>
                             <td><span class="fw-medium">{{ $op->numero }}</span></td>
                             <td>{{ $op->libelle }}</td>
+                            <td><span class="fw-medium">{{ $op->elaboration }}</span></td>
+                            <td><span class="fw-medium">{{ $op->type }}</span></td>
                             <td><span class="fw-medium">{{ $op->montant }}DH</span></td>
                             <td>
                                 <span

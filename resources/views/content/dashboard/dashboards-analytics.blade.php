@@ -44,11 +44,14 @@
                             <form action="{{ url('/import') }}" method="post" enctype="multipart/form-data"
                                 class="input-group">
                                 @csrf
-                                <input type="file" class="form-control" id="file" aria-label="Upload">
-                                <button class="btn btn-md btn-success" class="-2" type="submit"
+                                <label for="file"  class="btn btn-sm btn-outline-success">Choose File</label>
+                                <input type="file" name="file" id="file" class="form-control visually-hidden" aria-label="Upload">
+
+                                <button class="btn btn-md btn-success" value="Import data" class="-2" type="submit"
                                     value="import">import</button>
-                                <a class="btn btn-md btn-success" href="{{ url('export') }}">export</a>
+                                <a class="btn btn-md btn-success" href="{{url('exportall')}}">export</a>
                             </form>
+
                             <!-- <a  class="btn btn-md btn-success" value="export">export</a>
                                                                                                                                                                                                 <input type="button"  class="btn btn-md btn-success" value="import"> -->
                         </div>
@@ -76,7 +79,7 @@
 
                             </div>
                             <span class="fw-semibold d-block mb-1">Total Op</span>
-                            <h3 class="card-title  mb-2">{{ $totalPrice }} Dh</h3>
+                            <h6 class="card-title  mb-2">{{ $totalPrice }} Dh</h6>
                         </div>
                     </div>
                 </div>

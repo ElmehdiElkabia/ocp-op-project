@@ -3,6 +3,7 @@
 @section('title', 'Tableau - Recherche- OP')
 
 @section('content')
+
     <h4 class="py-3 mb-4">
         <span class="text-muted fw-light">Recherche /</span> Tout
     </h4>
@@ -16,16 +17,20 @@
                     <tr>
                         <th>Numero Op</th>
                         <th>Libelle</th>
+                        <th>Elaboration</th>
+                        <th>Type</th>
                         <th>Montant</th>
-                        <th>Status</th>
+                        <th>Regellement</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                    @foreach ($ops as $op)
+                @foreach ($ops as $op)
                         <tr>
                             <td><span class="fw-medium">{{ $op->numero }}</span></td>
                             <td>{{ $op->libelle }}</td>
+                            <td><span class="fw-medium">{{ $op->elaboration }}</span></td>
+                            <td><span class="fw-medium">{{ $op->type }}</span></td>
                             <td><span class="fw-medium">{{ $op->montant }}DH</span></td>
                             <td>
                                 <span

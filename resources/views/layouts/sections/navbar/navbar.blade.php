@@ -48,15 +48,14 @@
             <button type="submit" class="btn btn-success ">Recherche</button>
         </form>
     </div>
-
-    {{-- style="margin-left: 201%" --}}
+    
+    {{-- style="margin-left: 20px" --}}
     <!-- /Search -->
     <ul class="navbar-nav flex-row align-items-center ms-auto">
-
         <!-- Place this tag where you want the button to render. -->
         <li class="nav-item lh-1 me-3">
 
-            <a href="{{ url('/créer/nouvelle') }}" class="btn btn-success">+ Creer</a>
+        <a href="{{ url('/créer/nouvelle') }}" class="btn btn-success">Creer</a>
         </li>
 
     </ul>

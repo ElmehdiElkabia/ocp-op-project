@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\authentications\Login;
+use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\GestionopController;
 
 // Main Page Route
@@ -32,3 +33,9 @@ Route::delete('op/{id}', [GestionopController::class, 'destroy'])->name('destroy
 
 // search
 Route::get('/search', [GestionopController::class, 'search'])->name('search');
+//excel
+Route::get('/excel', [ExcelController::class, 'excel'])->name('excel');
+Route::post('/import', [ExcelController::class, 'import'])->name('import');
+Route::get('/export/{id}', [ExcelController::class, 'export'])->name('export');
+Route::post('/export/{id}', [ExcelController::class, 'export'])->name('export'); // It seems redundant to have both GET and POST for export
+Route::get('/exportall', [ExcelController::class, 'exportall'])->name('exportall');
